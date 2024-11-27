@@ -30,15 +30,15 @@ export default function RootLayout({
           >
             KR
           </a>
-          <span className="text-sm text-black">|</span>
-          <a 
+          {/* <span className="text-sm text-black">|</span> */}
+          {/* <a 
             href="https://jp.boksoondoga.com" 
             className={'text-sm text-black hover:opacity-75'}
             target="_blank"
             rel="noopener noreferrer"
           >
             JP
-          </a>
+          </a> */}
         </div>
         <div className="header-logo">
           <Link href="/">
