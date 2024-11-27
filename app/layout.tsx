@@ -19,21 +19,43 @@ export default function RootLayout({
       className={`overflow-y-scroll overflow-x-hidden h-full bg-white`}
     >
 
-    <header className="fixed left-0 top-0 w-screen px-[60px] py-[30px] box-border z-[100] flex">
-      <div className="header-logo">
-        <Link href="/">
-          <Image
-            src={"/images/logo.jpg"}
-            height={40}
-            width={238}
-            alt="Boksoondoga"/></Link>
+    <header className="fixed left-0 top-0 w-screen px-[60px] py-[30px] box-border z-[100]">
+      <div className="relative flex items-center">
+        <div className="absolute right-0 top-[-20px] flex gap-2">
+          <a 
+            href="https://boksoondoga.com" 
+            className={'text-sm text-black hover:opacity-75'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            KR
+          </a>
+          <span className="text-sm text-black">|</span>
+          <a 
+            href="https://jp.boksoondoga.com" 
+            className={'text-sm text-black hover:opacity-75'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JP
+          </a>
+        </div>
+        <div className="header-logo">
+          <Link href="/">
+            <Image
+              src={"/images/logo.jpg"}
+              height={40}
+              width={238}
+              alt="Boksoondoga"/>
+          </Link>
+        </div>
+        <nav className="flex gap-4 items-center mx-auto">
+          <Link href={'/about'} className={'text-xl text-black'}>About</Link>
+          <Link href={'/space'} className={'text-xl text-black'}>Space</Link>
+          <Link href={'/faq'} className={'text-xl text-black'}>FAQ</Link>
+          <Link href={'/contact'} className={'text-xl text-black'}>Contact</Link>
+        </nav>
       </div>
-      <nav className="flex gap-4 items-center mx-auto">
-        <Link href={'/about'} className={'text-xl text-black'}>About</Link>
-        <Link href={'/space'} className={'text-xl text-black'}>Space</Link>
-        <Link href={'/faq'} className={'text-xl text-black'}>FAQ</Link>
-        <Link href={'/contact'} className={'text-xl text-black'}>Contact</Link>
-      </nav>
     </header>
     <main>{children}</main>
     <footer className="flex py-10 text-black opacity-50 text-sm">
