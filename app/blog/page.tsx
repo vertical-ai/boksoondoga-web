@@ -9,13 +9,14 @@ export const metadata: Metadata = {
   keywords: ['Korean makgeolli', 'traditional rice wine', 'Korean alcohol blog', 'makgeolli brewing'],
 };
 
-export default function BlogPage({ 
-  searchParams 
-}: { 
-  searchParams?: { category?: string } 
-}) {
+type PageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function BlogPage({ searchParams }: PageProps) {
+  const params = await searchParams;
   const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-  const selectedCategory = searchParams?.category || '';
+  const selectedCategory = params?.category || '';
   
   const filteredPosts = selectedCategory 
     ? blogPosts.filter(post => post.category === selectedCategory)
