@@ -1,16 +1,9 @@
-export type BlogContentBlock = {
-  type: 'paragraph' | 'image';
-  content: string;
-  caption?: string;
-  imageUrl?: string;
-};
-
 export type BlogPost = {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
-  content: BlogContentBlock[];
+  content: string;
   category: BlogCategory;
   date: string;
   imageUrl: string;
@@ -19,14 +12,6 @@ export type BlogPost = {
   keywords: string[];
   lastModified: string;
   canonicalUrl?: string;
-  structuredData?: {
-    datePublished: string;
-    dateModified: string;
-    author: {
-      name: string;
-      type: 'Person';
-    };
-  };
 };
 
 export type BlogCategory = 
