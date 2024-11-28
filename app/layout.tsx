@@ -85,6 +85,7 @@ export default function RootLayout({
           </div>
           <nav className="flex gap-4 items-center mx-auto">
             <Link href={'/about'} className={'text-xl text-black'}>About</Link>
+            <Link href={'/blog'} className={'text-xl text-black'}>Blog</Link>
             <Link href={'/space'} className={'text-xl text-black'}>Space</Link>
             <Link href={'/faq'} className={'text-xl text-black'}>FAQ</Link>
             <Link href={'/contact'} className={'text-xl text-black'}>Contact</Link>
