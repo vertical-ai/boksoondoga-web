@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: '/private/',
     },
-    sitemap: 'https://en.boksoondoga.com/sitemap.xml',
+    sitemap: 'https://en.boksoondoga.com/sitemap.xml'
   }
 } 

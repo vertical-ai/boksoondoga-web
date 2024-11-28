@@ -20,7 +20,8 @@ export default function JsonLd() {
             "streetAddress": "48, Hyangsandong-gil",
             "addressLocality": "Sangbuk-myeon, Ulju-gun",
             "addressRegion": "Ulsan",
-            "addressCountry": "KR"
+            "addressCountry": "KR",
+            "postalCode": "44905"
           },
           "sameAs": [
             "https://www.instagram.com/boksoondoga/",
