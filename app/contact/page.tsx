@@ -2,7 +2,38 @@
 
 import { useState } from 'react';
 
-export default function Page() {
+// Add contact structured data
+const contactStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Boksoondoga Contact",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Boksoondoga",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+82-52-264-3539",
+      "email": "boksoondoga@gmail.com",
+      "contactType": "customer service",
+      "availableLanguage": ["en", "ko"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48, Hyangsandong-gil",
+      "addressLocality": "Ulju-gun",
+      "addressRegion": "Ulsan",
+      "addressCountry": "KR"
+    }
+  }
+};
+
+export default function ContactPage() {
   const [status, setStatus] = useState<{
     type: 'success' | 'error' | null;
     message: string;
@@ -46,46 +77,55 @@ export default function Page() {
   };
 
   return (
-    <div className={'flex flex-col bg-[#ffffe4] pt-48 text-black px-36 min-h-screen'}>
-      <div className={'flex flex-col gap-7 text-center border-b border-black pb-7 mb-7'}>
-        <h2 className={'text-6xl font-bold'}>Contact Us</h2>
+    <main className={'flex flex-col bg-[#ffffe4] pt-48 text-black px-36 min-h-screen'}>
+      {/* Add structured data script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactStructuredData) }}
+      />
+
+      <header className={'flex flex-col gap-7 text-center border-b border-black pb-7 mb-7'}>
+        <h1 className={'text-6xl font-bold'}>Contact Us</h1>
         <p className={'text-2xl'}>
           We'd love to hear from you.<br/>
           Get in touch with us for any inquiries.
         </p>
-      </div>
+      </header>
 
       <div className="mt-20 grid grid-cols-2 gap-20 mb-32">
-        <div className="space-y-12">
-          <div className="bg-white/50 p-8 rounded-lg backdrop-blur-sm">
-            <h3 className={'text-2xl font-bold mb-4'}>General Inquiries</h3>
-            <p className={'text-lg text-[#666]'}>
+        <aside className="space-y-12">
+          <section className="bg-white/50 p-8 rounded-lg backdrop-blur-sm" aria-labelledby="general-inquiries">
+            <h2 id="general-inquiries" className={'text-2xl font-bold mb-4'}>General Inquiries</h2>
+            <address className={'text-lg text-[#666] not-italic'}>
               For general questions about our products, services, or company:
               <br/><br/>
-              Email: boksoondoga@gmail.com<br/>
-              Tel: +82-52-264-3539
-            </p>
-          </div>
+              Email: <a href="mailto:boksoondoga@gmail.com" className="hover:underline">boksoondoga@gmail.com</a><br/>
+              Tel: <a href="tel:+82522643539" className="hover:underline">+82-52-264-3539</a>
+            </address>
+          </section>
 
-          <div className="bg-white/50 p-8 rounded-lg backdrop-blur-sm">
-            <h3 className={'text-2xl font-bold mb-4'}>Business Hours</h3>
-            <p className={'text-lg text-[#666]'}>
-              Monday - Friday: 9:00 AM - 6:00 PM KST<br/>
-              Saturday - Sunday: Closed
-            </p>
-          </div>
+          <section className="bg-white/50 p-8 rounded-lg backdrop-blur-sm" aria-labelledby="business-hours">
+            <h2 id="business-hours" className={'text-2xl font-bold mb-4'}>Business Hours</h2>
+            <dl className={'text-lg text-[#666]'}>
+              <dt>Monday - Friday</dt>
+              <dd>9:00 AM - 6:00 PM KST</dd>
+              <dt>Saturday - Sunday</dt>
+              <dd>Closed</dd>
+            </dl>
+          </section>
 
-          <div className="bg-white/50 p-8 rounded-lg backdrop-blur-sm">
-            <h3 className={'text-2xl font-bold mb-4'}>Location</h3>
-            <p className={'text-lg text-[#666]'}>
+          <section className="bg-white/50 p-8 rounded-lg backdrop-blur-sm" aria-labelledby="location">
+            <h2 id="location" className={'text-2xl font-bold mb-4'}>Location</h2>
+            <address className={'text-lg text-[#666] not-italic'}>
               48, Hyangsandong-gil,<br/>
               Sangbuk-myeon, Ulju-gun,<br/>
               Ulsan, Korea
-            </p>
-          </div>
-        </div>
+            </address>
+          </section>
+        </aside>
 
-        <div className="bg-white p-10 rounded-lg shadow-lg">
+        <section className="bg-white p-10 rounded-lg shadow-lg" aria-labelledby="contact-form">
+          <h2 id="contact-form" className="sr-only">Contact Form</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <input 
               type="hidden" 
@@ -112,6 +152,7 @@ export default function Page() {
                 id="name"
                 name="name"
                 required
+                aria-required="true"
                 className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-black/5 focus:border-black transition-colors"
                 placeholder="Your name"
               />
@@ -165,8 +206,8 @@ export default function Page() {
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 } 

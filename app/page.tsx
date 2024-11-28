@@ -1,6 +1,18 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+// Add metadata export
+export const metadata: Metadata = {
+  title: 'Boksoondoga - Traditional Korean Makgeolli | Hand-brewed Rice Wine',
+  description: 'Discover Boksoondoga\'s premium hand-brewed Makgeolli. Experience traditional Korean rice wine, subscription services, and brewing workshops. Pure, non-pasteurized excellence.',
+  keywords: 'Boksoondoga, Makgeolli, Korean rice wine, traditional brewing, hand-brewed, subscription service',
+  openGraph: {
+    title: 'Boksoondoga - Traditional Korean Makgeolli',
+    description: 'Premium hand-brewed Makgeolli and traditional Korean rice wine',
+    images: ['/images/main2.jpg'],
+  },
+};
 export default function Home() {
   return (
     <div className={'h-full flex flex-col touch-none transition duration-700 transform'}>
