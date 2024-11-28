@@ -5,12 +5,14 @@ import { getPostBySlug } from '../../data/blogPosts';
 import { notFound } from 'next/navigation';
 import type { BlogPost } from '../../types/blog';
 
-type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+type PageProps = {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
 
@@ -81,8 +83,10 @@ function JsonLd({ post }: { post: BlogPost }) {
   );
 }
 
-export default async function BlogPost({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost(
+  props: PageProps
+): Promise<JSX.Element> {
+  const post = getPostBySlug(props.params.slug);
   
   if (!post) {
     notFound();
