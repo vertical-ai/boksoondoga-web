@@ -5,7 +5,7 @@ import { getPostBySlug } from '../../data/blogPosts';
 import { notFound } from 'next/navigation';
 import type { BlogPost } from '../../types/blog';
 
-type PageParams = { slug: string }
+type PageParams = Promise<{ slug: string }>;
 
 function JsonLd({ post }: { post: BlogPost }) {
   const jsonLd = {
@@ -47,7 +47,8 @@ export async function generateMetadata({
 }: {
   params: PageParams
 }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -87,7 +88,8 @@ export default async function BlogPost({
 }: {
   params: PageParams
 }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     notFound();
