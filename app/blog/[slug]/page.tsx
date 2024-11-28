@@ -5,8 +5,6 @@ import { getPostBySlug } from '../../data/blogPosts';
 import { notFound } from 'next/navigation';
 import type { BlogPost } from '../../types/blog';
 
-type PageParams = Promise<{ slug: string }>;
-
 function JsonLd({ post }: { post: BlogPost }) {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -45,10 +43,9 @@ function JsonLd({ post }: { post: BlogPost }) {
 export async function generateMetadata({
   params,
 }: {
-  params: PageParams
+  params: { slug: string }
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(params.slug);
   if (!post) return {};
 
   return {
