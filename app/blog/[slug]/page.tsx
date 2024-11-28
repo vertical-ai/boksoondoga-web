@@ -97,18 +97,18 @@ export default async function BlogPost(props: { params: PageParams }) {
           <header className="mb-8">
             <Link 
               href={`/blog/categories/${encodeURIComponent(post.category)}`}
-              className="text-sm text-gray-500 hover:underline"
+              className="text-sm text-gray-600 hover:underline"
             >
               {post.category}
             </Link>
-            <h1 className="text-4xl font-bold mt-2 mb-4">{post.title}</h1>
-            <div className="flex items-center gap-4 text-gray-500">
+            <h1 className="text-4xl font-bold mt-2 mb-4 text-gray-900">{post.title}</h1>
+            <div className="flex items-center gap-4 text-gray-600">
               <span>{post.author}</span>
               <time>{new Date(post.date).toLocaleDateString()}</time>
             </div>
           </header>
 
-          <div className="prose max-w-none">
+          <div className="prose max-w-none text-gray-800">
             {Array.isArray(post.content) ? (
               post.content.map((block, index) => {
                 if (block.type === 'image') {

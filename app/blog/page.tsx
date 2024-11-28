@@ -74,7 +74,7 @@ export default async function BlogPage(props: { searchParams: PageProps['searchP
               </div>
               <div className="p-6">
                 <p className="text-sm text-gray-600 mb-2">{post.category}</p>
-                <h2 className="text-xl font-bold mb-2">{post.title}</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">{post.title}</h2>
                 <p className="text-gray-600">{post.excerpt}</p>
                 <p className="text-sm text-gray-500 mt-4">{post.date}</p>
               </div>
