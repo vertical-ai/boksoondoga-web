@@ -10,12 +10,14 @@ export const metadata: Metadata = {
 };
 
 type PageProps = {
-  searchParams: { category?: string };
+  searchParams: Promise<{ category?: string }>;
 };
 
-export default async function BlogPage({ searchParams }: PageProps) {
+export default async function BlogPage(props: { searchParams: PageProps['searchParams'] }) {
+  const params = await props.searchParams;
+  const selectedCategory = params?.category || '';
+  
   const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-  const selectedCategory = searchParams?.category || '';
   
   const filteredPosts = selectedCategory 
     ? blogPosts.filter(post => post.category === selectedCategory)

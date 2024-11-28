@@ -40,14 +40,13 @@ function JsonLd({ post }: { post: BlogPost }) {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
-  if (!post) return {};
+type PageParams = Promise<{ slug: string }>;
 
+export async function generateMetadata(props: { params: PageParams }): Promise<Metadata> {
+  const { slug } = await props.params;
+  const post = await getPostBySlug(slug);
+  if (!post) return {};
+  
   return {
     title: `${post.title} | Boksoondoga Blog`,
     description: post.metaDescription,
@@ -80,8 +79,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPost(props: { params: PageParams }) {
+  const { slug } = await props.params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     notFound();
