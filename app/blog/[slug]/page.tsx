@@ -10,6 +10,41 @@ type Props = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
+function JsonLd({ post }: { post: BlogPost }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.metaDescription,
+    image: post.imageUrl,
+    datePublished: post.date,
+    dateModified: post.lastModified,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Boksoondoga',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/logo.jpg`
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': post.canonicalUrl,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   if (!post) return {};
@@ -44,41 +79,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: post.canonicalUrl,
     },
   };
-}
-
-function JsonLd({ post }: { post: BlogPost }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.metaDescription,
-    image: post.imageUrl,
-    datePublished: post.date,
-    dateModified: post.lastModified,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Boksoondoga',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/logo.jpg`
-      }
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': post.canonicalUrl,
-    },
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
 }
 
 export default async function BlogPost({ params }: Props) {
