@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Boksoondoga',
     metaDescription: 'Explore the traditional brewing methods of Boksoondoga, where Korean makgeolli is crafted using time-honored techniques, 100% domestic rice, and natural fermentation in traditional hangari vessels.',
     keywords: ['Boksoondoga', 'traditional makgeolli', 'hand-brewed rice wine', 'Korean rice wine tradition', 'hangari fermentation', 'natural brewing'],
-    lastModified: '2024-01-15'
+    lastModified: '2024-10-15'
   },
   {
     id: '2',
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Boksoondoga',
     metaDescription: 'Explore what makes Boksoondoga Makgeolli special - from its natural carbonation and pure ingredients to serving temperatures and creative serving suggestions. Learn how traditional Korean brewing methods create a uniquely refreshing rice wine.',
     keywords: ['natural carbonation', 'pure makgeolli', 'Boksoondoga ingredients', '100% Korean rice', 'traditional nuruk', 'makgeolli serving temperature', 'Korean rice wine', 'fermented beverages'],
-    lastModified: '2024-01-16'
+    lastModified: '2024-11-01'
   },
   {
     id: '3',
@@ -176,7 +176,7 @@ export const blogPosts: BlogPost[] = [
       'traditional Korean drinks',
       'diplomatic events'
     ],
-    lastModified: '2024-01-17'
+    lastModified: '2024-11-17'
   }
 ];
 

@@ -15,10 +15,11 @@ export const metadata: Metadata = {
     siteName: 'Boksoondoga',
     images: [
       {
-        url: '/images/og-image.jpg', // You'll need to add this image
+        url: '/images/boksoondoga-og-image.jpeg',
         width: 1200,
         height: 630,
-      },
+        alt: 'Traditional Korean Alcohol with Modern Sensibility - Boksoondoga',
+      }
     ],
     locale: 'en_US',
     type: 'website',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Boksoondoga',
     description: 'Traditional Korean Alcohol with Modern Sensibility',
-    images: ['/images/og-image.jpg'], // Same image as OpenGraph
+    images: ['/images/boksoondoga-og-image.jpeg'],
   },
   icons: {
     icon: '/favicon.png',
