@@ -4,12 +4,37 @@ import Image           from "next/image";
 import Link            from "next/link";
 
 export const metadata: Metadata = {
-  title: "Boksoondoga",
-  description: "Traditional Korean Alcohol with Modern Sensibility",
+  title: "Boksoondoga | Traditional Korean Alcohol with Modern Sensibility",
+  description: "Experience the authentic taste of Korean traditional alcohol. Boksoondoga crafts premium makgeolli using time-honored methods and the finest Korean ingredients.",
+  keywords: ["Boksoondoga", "Korean alcohol", "Makgeolli", "Traditional brewing", "Korean rice wine", "Ulsan brewery"],
+  openGraph: {
+    title: 'Boksoondoga',
+    description: 'Traditional Korean Alcohol with Modern Sensibility',
+    url: 'https://en.boksoondoga.com',
+    siteName: 'Boksoondoga',
+    images: [
+      {
+        url: '/images/og-image.jpg', // You'll need to add this image
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Boksoondoga',
+    description: 'Traditional Korean Alcohol with Modern Sensibility',
+    images: ['/images/og-image.jpg'], // Same image as OpenGraph
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
+  },
+  verification: {
+    google: 'QwbjsdzN-ilx8gxlqaL',
   },
 };
 
@@ -107,4 +132,38 @@ export default function RootLayout({
     </body>
     </html>
   );
+}
+
+export function JsonLd() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Boksoondoga",
+          "url": "https://en.boksoondoga.com",
+          "logo": "https://en.boksoondoga.com/images/logo.jpg",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+82-52-264-3539",
+            "contactType": "customer service",
+            "email": "boksoondoga@gmail.com"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "48, Hyangsandong-gil",
+            "addressLocality": "Sangbuk-myeon, Ulju-gun",
+            "addressRegion": "Ulsan",
+            "addressCountry": "KR"
+          },
+          "sameAs": [
+            "https://www.instagram.com/boksoondoga/",
+            "https://twitter.com/boksoondoga"
+          ]
+        })
+      }}
+    />
+  )
 }
