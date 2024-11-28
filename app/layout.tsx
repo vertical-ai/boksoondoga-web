@@ -6,6 +6,11 @@ import Link            from "next/link";
 export const metadata: Metadata = {
   title: "Boksoondoga",
   description: "Traditional Korean Alcohol with Modern Sensibility",
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
