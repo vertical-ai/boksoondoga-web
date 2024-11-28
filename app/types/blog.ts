@@ -1,9 +1,16 @@
+export type BlogContentBlock = {
+  type: 'paragraph' | 'image';
+  content: string;
+  caption?: string;
+  imageUrl?: string;
+};
+
 export type BlogPost = {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
+  content: BlogContentBlock[];
   category: BlogCategory;
   date: string;
   imageUrl: string;

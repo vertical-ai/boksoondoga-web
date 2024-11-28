@@ -102,19 +102,34 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
           </header>
 
-          <div className="relative h-[400px] mb-8">
-            <Image
-              src={post.imageUrl}
-              alt={post.title}
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-
           <div className="prose max-w-none">
-            {post.content.split('\n').map((paragraph, idx) => (
-              <p key={idx} className="mb-4">{paragraph}</p>
-            ))}
+            {post.content.map((block, idx) => {
+              if (block.type === 'image') {
+                return (
+                  <div key={idx} className="my-8">
+                    <div className="relative h-[400px]">
+                      <Image
+                        src={block.imageUrl!}
+                        alt={block.caption || ''}
+                        fill
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                    {block.caption && (
+                      <p className="text-center text-gray-500 mt-2 italic">
+                        {block.caption}
+                      </p>
+                    )}
+                  </div>
+                );
+              } else {
+                return (
+                  <p key={idx} className="mb-6">
+                    {block.content}
+                  </p>
+                );
+              }
+            })}
           </div>
         </article>
       </main>
