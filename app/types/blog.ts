@@ -1,9 +1,16 @@
+type ContentBlock = {
+  type: 'paragraph' | 'image';
+  content?: string;
+  imageUrl?: string;
+  caption?: string;
+};
+
 export type BlogPost = {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
+  content: ContentBlock[];
   category: BlogCategory;
   date: string;
   imageUrl: string;
@@ -20,4 +27,5 @@ export type BlogCategory =
   | 'Makgeolli History'
   | 'Product Knowledge'
   | 'Brewing Tips & Techniques'
-  | 'Food Pairing Guides'; 
+  | 'Food Pairing Guides'
+  | 'Awards & Recognition'; 

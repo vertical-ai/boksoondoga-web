@@ -1,0 +1,164 @@
+page1 = {Boksoondoga,
+Fresh Hand-brewed
+Rice Makgeolli.
+Boksoondoga Makgeolli.
+Pure. Non-pasteurized.
+Hand-brewed. 
+We proudly brew our rice wine
+with the utmost dedication and care.
+How to open 
+1 Lightly shake the bottle and  
+ open it at 45 degrees
+2 Open and close the lid several times
+3 Repeating this step helps 
+ remove the carbonation
+www.boksoon.com
+}
+
+page2 = {
+    Making makgeolli with a mother’s care  
+- that’s our mindset when we make Boksoondoga.
+We use 100% domestic rice,  
+by putting it in an old jar just like our mothers did  
+to make the best for their families.
+Natural carbonation is created as a gift from living breathing yeast during the 
+long fermentation process.  
+Boksoondogas unchanging methods stay true to time  
+and flavor and true to our hearts.Boksoondoga Makgeolli
+is a masterpiece.  
+We make best with  
+patience and true care.
+03 About us
+}
+
+page3 = {
+    Using the Korean hangari to carry our rice wine the way a mother 
+carries a child, is one of the key secrets to the recipe passed down 
+from our grandmother. This is the main reason why we only produce 
+our rice wine in the traditional hangari. The hangari is sanitized by 
+filling it up with rice straw, burning them, and leaving it to dry in the 
+sun.
+Just like a baby kicking in mother’s womb, our Boksoondoga Rice 
+Wine in the hangari is alive and breathing. Our brewery is filled with 
+the sound of fermentation, the breath of Boksoondoga Rice Wine 
+that artificial fermentation cannot create; a gift from nature.A feast for the living,  
+breathing yeast.
+We stick to only the  
+traditional method  
+to make the best.
+05 Our tradition
+}
+
+page4 = {
+    Boksoondoga Rice Wine is a home-brewed 
+liquor produced using traditional methods, 
+fermented in the traditional Korean hangari, 
+and brewed by using 100% newly harvested 
+Korean rice.Natural carbonation is produced through the fermentation process  
+with Korean traditional yeasts called ‘ Nuruk ’. It provides a rich and 
+mild taste with a refreshing sensation like champagne.  
+Unlike other Korean rice wine, Boksoondoga Rice Wine mixes evenly 
+without shaking the bottle before opening because of the natural 
+carbonation.
+
+}
+
+page5 = {
+    Eonyang, Ulsan city.
+We agonize over nature and people.
+The ‘do’ in Boksoondoga means city,  
+while ‘ga’ means house. These characters 
+come together to express our desire to stay 
+connected to the rural areas.
+Eonyang, where our brewery is located,  
+is a place of nature where the water is clear 
+and the air is good. Making the nuruk directly 
+with the village elders, we are realizing a 
+society where neighbors live in harmony.Keeping in mind the old saying that the 
+flavor of rice wine depends on the rice, we 
+carefully select and use the best rice produced 
+domestically.
+The reason for using only 100% domestic rice 
+is Boksoondoga’s commitment to a win-win 
+situation with the community, where everyone 
+benefits.
+09 Social value
+}
+
+page6 = {
+    Special care is needed when
+opening Boksoondoga Rice Wine.
+One of the things that make Boksoondoga Rice Wine so 
+special is the abundance of natural carbonation, which is why 
+you need to pay extra attention and care when opening the 
+bottle. See and feel the sparkling taste with your own eyes and 
+mouth... enjoy an experience only Boksoondoga can give.
+Turn it upside down and shake gently 
+to mix the settled sediment, then put 
+it in the freezer for 10 minutes.Tilt the bottle 45 degrees, then open and 
+close the lid several times slowly. Repeat 
+until carbonation is totally released.After you've checked that completely 
+carbonation has been removed, enjoy!1 2 3
+기울여
+뚜껑 여닫기
+Boksoondoga’s design captures
+the Korean culture and Jungsuh.
+The curve containing the hand-brewed makgeolli and  
+the white beauty inside is the beauty of the Korean culture, 
+pursued by Boksoondoga.
+The transparent bottle displays the natural carbonation,  
+a product of traditional fermentation,  
+as it is, mixing the makgeolli naturally while giving  
+a simple visual effect.
+The elegant curve expresses the delicate and elaborate  
+touch of the craftsman. Boksoondoga has embedded  
+the aesthetics of sincerity into the design.
+※ Be careful as the strong carbonic acid may cause the lid to jump or the contents to spout.  
+※ Even if opened without shaking, carbonic acid will be released, mixing the sediment.  
+※ High temperature or external factors may cause the product to overflow.  
+ Please be aware of the expiration date and storage instructions.11 How to open
+}
+
+page7 = {
+    Following the 2012 Seoul Nuclear Security 
+Summit, in May 2013, at the dinner at the 
+presidential mission of the Blue House 
+Boksoondoga was selected as the official 
+toast owner. It has established itself as the 
+representative alcohol of Korea.
+Also, at the Milan World Expo in May 2015,  
+it was introduced as a toast for the opening of 
+the Korean Pavilion. Boksoondoga has raised 
+the bar to spread the knowledge of Korean 
+traditional food culture both inside and 
+outside the country.Boksoondoga Rice Wine  
+has taken its place as the drink 
+that is representative of Korea
+Universal exposition Milano 2015, Italia
+2012 Seoul Nuclear Security SummitBoksoondoga is a 6th industry company. The 6th industry is based on 
+tangible and intangible resources, and is all that exists in rural areas; 
+agriculture, food, special product manufacturing and processing 
+secondary industry and distribution sales, culture, experiences, 
+tourism, service tertiary industries, etc. The 6th industry refers to 
+activities that create new added value by linking these together.
+Boksoondoga was designated as the excellent cultural product selected 
+by Korea in the food sector in 2016. This excellent cultural product 
+designation system designates the best cultural products that contain 
+Korean cultural values, and attaches the K-ribbon mark in the shape 
+of Hanbok (Korean traditional clothing). Systematic management 
+and branding on these products create a “Korea Premium” through 
+marketing. This system was initiated in November 2015 for anything 
+that can represent the Korean culture, including cultural content, 
+hanbok, crafts, traditional Korean food, and other food products. In 
+addition, Boksoondoga was selected for GOOD DESIGN in Excellence 
+in Design at the 2017 Good Design Awards hosted by the Ministry of 
+Trade, Industry and Energy.
+Boksoondoga is making great efforts to export overseas to promote 
+the excellence of this traditional liquor. Boksoondoga has especially 
+participated in various Japanese fairs and has established and secured 
+export channels with local distributors. Since we began to export to 
+Japan, exports have been increasing by more than 30% each year, while 
+brand awareness is also steadily rising.
+13 Awards
+}
+

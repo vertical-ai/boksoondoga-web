@@ -83,17 +83,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: PageParams
-}) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug);
   
   if (!post) {
     notFound();
   }
+
+  console.log('Post content:', post.content);
 
   return (
     <>
@@ -114,17 +111,42 @@ export default async function BlogPost({
             </div>
           </header>
 
-          <div className="relative h-[400px] mb-8">
-            <Image
-              src={post.imageUrl}
-              alt={post.title}
-              fill
-              className="object-cover rounded-lg"
-            />
-          </div>
-
           <div className="prose max-w-none">
-            {post.content}
+            {Array.isArray(post.content) ? (
+              post.content.map((block, index) => {
+                if (block.type === 'image') {
+                  return (
+                    <div key={index} className="my-8">
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={block.imageUrl || ''}
+                          alt={block.caption || ''}
+                          fill
+                          className="object-cover rounded-lg"
+                        />
+                      </div>
+                      {block.caption && (
+                        <p className="text-center text-gray-500 mt-2 italic">
+                          {block.caption}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
+                
+                if (block.type === 'paragraph') {
+                  return (
+                    <p key={index} className="mb-6">
+                      {block.content}
+                    </p>
+                  );
+                }
+                
+                return null;
+              })
+            ) : (
+              <p>No content available</p>
+            )}
           </div>
         </article>
       </main>
