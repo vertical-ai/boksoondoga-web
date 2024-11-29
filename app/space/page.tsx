@@ -33,6 +33,51 @@ const locationStructuredData = {
   }]
 };
 
+// Add this type definition at the top of the file
+type StoreLocation = {
+  name: string;
+  address: string;
+  phone: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
+};
+
+// Add store data
+const storeLocations: StoreLocation[] = [
+  {
+    name: "Seoul Store",
+    address: "373-8, Cheongpa-ro, Yongsan-gu, Seoul",
+    phone: "070-8015-3576",
+    coordinates: { lat: 37.5326, lng: 126.9647 }
+  },
+  {
+    name: "Osong Store",
+    address: "123-2B, Osong Station Square, Cheongju-si, Chungbuk",
+    phone: "070-8015-3179",
+    coordinates: { lat: 36.6199, lng: 127.3292 }
+  },
+  {
+    name: "Daejeon Store",
+    address: "215-3, Dongdaejeon-ro, Dong-gu, Daejeon",
+    phone: "070-8015-9287",
+    coordinates: { lat: 36.3504, lng: 127.4347 }
+  },
+  {
+    name: "Dongdaegu Store",
+    address: "550, Dongdaegu-ro, Dong-gu, Daegu",
+    phone: "070-8015-9247",
+    coordinates: { lat: 35.8714, lng: 128.6298 }
+  },
+  {
+    name: "Ulsan Store",
+    address: "177-1, Samsan-dong, Nam-gu, Ulsan",
+    phone: "070-8015-9048",
+    coordinates: { lat: 35.5384, lng: 129.3114 }
+  }
+];
+
 export default function SpacePage() {
   return (
     <main className={'flex flex-col bg-[#ffffe4]'}>
@@ -107,43 +152,74 @@ export default function SpacePage() {
       </section>
 
       {/* Store Section */}
-      <section className="py-44 flex justify-center text-black" aria-label="Nationwide Stores">
-        <div className="flex flex-col mr-24 max-w-2xl">
-          <h2 className="sr-only">Our Retail Locations</h2>
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed">
-              Boksoondoga combines &apos;都&apos; (city) and &apos;家&apos; (home),<br/>
-              expressing our wish to connect urban and rural areas.<br/>
-              We operate stores at major train stations across regions.<br/>
-              Our station stores are welcoming faces of Boksoondoga,<br/>
-              greeting people traveling between cities and countryside.
-            </p>
+      <section className="py-44 flex flex-col items-center text-black" aria-label="Nationwide Stores">
+        <div className="flex justify-center w-full mb-20">
+          <div className="flex flex-col mr-24 max-w-2xl">
+            <h2 className="sr-only">Our Retail Locations</h2>
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                Boksoondoga combines &apos;都&apos; (city) and &apos;家&apos; (home),<br/>
+                expressing our wish to connect urban and rural areas.<br/>
+                We operate stores at major train stations across regions.<br/>
+                Our station stores are welcoming faces of Boksoondoga,<br/>
+                greeting people traveling between cities and countryside.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <Image 
+              src="/images/space4_shop_img1.jpg" 
+              width={600} 
+              height={450} 
+              alt="Boksoondoga retail store showcasing traditional Korean makgeolli products"
+              className="object-cover rounded-lg shadow-lg"
+            />
+            <div className="mt-10 text-sm opacity-70">
+              <dl className="grid grid-cols-2 gap-2">
+                <dt>Business Days</dt>
+                <dd>Open All Year</dd>
+                <dt>Hours</dt>
+                <dd>Varies by Location</dd>
+              </dl>
+              <Link 
+                href="https://instagram.com/boksoondoga" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block col-span-2 text-black hover:opacity-70 transition-opacity mt-4"
+                aria-label="Follow Boksoondoga on Instagram"
+              >
+                instagram @boksoondoga
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col">
-          <Image 
-            src="/images/space4_shop_img1.jpg" 
-            width={600} 
-            height={450} 
-            alt="Boksoondoga retail store showcasing traditional Korean makgeolli products"
-            className="object-cover rounded-lg shadow-lg"
-          />
-          <div className="mt-10 text-sm opacity-70">
-            <dl className="grid grid-cols-2 gap-2">
-              <dt>Business Days</dt>
-              <dd>Open All Year</dd>
-              <dt>Hours</dt>
-              <dd>Varies by Location</dd>
-            </dl>
-            <Link 
-              href="https://instagram.com/boksoondoga" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block col-span-2 text-black hover:opacity-70 transition-opacity mt-4"
-              aria-label="Follow Boksoondoga on Instagram"
-            >
-              instagram @boksoondoga
-            </Link>
+
+        {/* New Store Locations List */}
+        <div className="w-full max-w-6xl mt-20">
+          <h3 className="text-2xl mb-10 text-center">Store Locations</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-8">
+              {storeLocations.map((store, index) => (
+                <div key={index} className="border-b pb-4">
+                  <h4 className="font-bold mb-2">{store.name}</h4>
+                  <p className="text-sm opacity-70">{store.address}</p>
+                  <p className="text-sm opacity-70">Tel: {store.phone}</p>
+                </div>
+              ))}
+            </div>
+            
+            {/* Google Maps Integration */}
+            <div className="h-[500px] w-full rounded-lg overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/search?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=boksoondoga+stores+in+korea`}
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
