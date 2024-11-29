@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Boksoondoga',
     images: [
       {
-        url: '/boksoondoga-og-image2.jpeg',
+        url: 'https://en.boksoondoga.com/boksoondoga-og-image2.jpeg?v=1',
         width: 1200,
         height: 630,
         alt: 'Traditional Korean Alcohol with Modern Sensibility - Boksoondoga',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Boksoondoga',
     description: 'Traditional Korean Alcohol with Modern Sensibility',
-    images: ['/boksoondoga-og-image2.jpeg'],
+    images: ['https://en.boksoondoga.com/boksoondoga-og-image2.jpeg'],
   },
   icons: {
     icon: '/favicon.png',
